@@ -58,6 +58,8 @@ E.g. encrypt(‘zzz’,1) would return ‘aaa’
 
 Faisal Kushha
 
+I worked in collaboration with "Jehad Abu Awwad"
+
 ## Pull requests
 
 https://github.com/Faisal-Kushha/Cryptography/pull/1

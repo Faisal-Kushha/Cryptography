@@ -28,7 +28,7 @@ def encrypt(plain_text_phrase, numeric_shift):
             character = (lowercase_letter.index(char) + numeric_shift) % 26
             text += lowercase_letter[character]
         elif char not in uppercase_letter and char not in lowercase_letter:
-            character = re.sub(r'[^A-Za-z]', ' ', char)
+            character = re.sub(r'[^A-Za-z][^,.!?;:"@#$%*()-+=]', ' ', char)
             text += character
     return text
 
@@ -47,7 +47,7 @@ def count_words(plain_text_phrase):
     words = plain_text_phrase.split()
     word_count = 0
     for i in words:
-        clean_word = re.sub(r'[^A-Za-z]', ' ', i)
+        clean_word = re.sub(r'[^A-Za-z][^,.!?;:"@#$%*()-+=]', ' ', i)
         if clean_word.lower() in word_list or clean_word in name_list:
             word_count += 1
     return word_count
@@ -69,7 +69,7 @@ def crack(plain_text_phrase):
 
 
 if __name__ == "__main__":
-    text1 = encrypt('It was the best of times', 7)
+    text1 = encrypt('It was the best of times, it was the worst of times.', 7)
     text2 = encrypt('it was the worst of times', 7)
     text3 = decrypt(text1, 7)
     text4 = decrypt(text2, 7)

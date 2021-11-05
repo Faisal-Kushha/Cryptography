@@ -7,19 +7,19 @@ def test_version():
 
 
 def test_encrypt():
-    text1 = 'abc'
-    text2 = 'zzz'
-    shift1 = 1
-    shift2 = 10
-    shift3 = 27
+    text1 = 'Good Morning :)'
+    text2 = 'Good Night :('
+    shift1 = 2
+    shift2 = 11
+    shift3 = 23
     actual1 = encrypt(text1, shift1)
     actual2 = encrypt(text1, shift2)
     actual3 = encrypt(text1, shift3)
     actual4 = encrypt(text2, shift1)
-    excpected1 = 'bcd'
-    excpected2 = 'klm'
-    excpected3 = 'bcd'
-    excpected4 = 'aaa'
+    excpected1 = 'Iqqf Oqtpkpi :)'
+    excpected2 = 'Rzzo Xzcytyr :)'
+    excpected3 = 'Dlla Jlokfkd :)'
+    excpected4 = 'Iqqf Pkijv :('
 
     assert actual1 == excpected1
     assert actual2 == excpected2
@@ -28,15 +28,15 @@ def test_encrypt():
 
 
 def test_decrypt():
-    text = 'bcd'
-    shift = 1
+    text = 'Good Morning :)'
+    shift = 3
     actual = decrypt(text, shift)
-    excpected = 'abc'
+    excpected = 'Dlla Jlokfkd :)'
     assert actual == excpected
 
 
 def test_crack():
-    text = 'It was the best of times'
+    text = 'Pa dhz aol ilza vm aptlz, pa dhz aol dvyza vm aptlz.'
     actual = crack(text)
-    excpected = 'It was the best of times'
+    excpected = 'It was the best of times, it was the worst of times.'
     assert actual == excpected
